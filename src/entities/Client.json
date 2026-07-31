@@ -1,0 +1,78 @@
+{
+  "name": "Client",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nombre completo del cliente"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Tel\u00e9fono del cliente"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email del cliente"
+    },
+    "state": {
+      "type": "string",
+      "description": "Estado donde vive"
+    },
+    "city": {
+      "type": "string",
+      "description": "Ciudad"
+    },
+    "address": {
+      "type": "string",
+      "description": "Direcci\u00f3n completa"
+    },
+    "documents": {
+      "type": "array",
+      "description": "Documentos del cliente (IDs, recetas, etc.)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "upload_date": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    "referring_doctor_id": {
+      "type": "string",
+      "description": "ID del doctor que lo refiri\u00f3"
+    },
+    "referring_doctor_name": {
+      "type": "string",
+      "description": "Nombre del doctor que lo refiri\u00f3"
+    },
+    "total_rentals": {
+      "type": "number",
+      "default": 0,
+      "description": "Total de rentas realizadas"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notas adicionales sobre el cliente"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Si el cliente est\u00e1 activo"
+    }
+  },
+  "required": [
+    "name",
+    "phone"
+  ]
+}
