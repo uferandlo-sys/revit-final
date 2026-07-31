@@ -1,0 +1,48 @@
+{
+  "name": "TeamMember",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nombre del integrante"
+    },
+    "role": {
+      "type": "string",
+      "description": "Cargo o rol"
+    },
+    "description": {
+      "type": "string",
+      "description": "Breve descripci\u00f3n"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Foto del integrante"
+    },
+    "order": {
+      "type": "number",
+      "description": "Orden de visualizaci\u00f3n",
+      "default": 0
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Si est\u00e1 activo"
+    }
+  },
+  "required": [
+    "name",
+    "role"
+  ],
+  "rls": {
+    "read": true,
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

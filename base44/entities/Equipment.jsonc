@@ -1,0 +1,57 @@
+{
+  "name": "Equipment",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nombre del equipo"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del equipo"
+    },
+    "price": {
+      "type": "number",
+      "description": "Precio de renta"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL de la foto del equipo"
+    },
+    "usage_images": {
+      "type": "array",
+      "description": "Fotos de uso del equipo",
+      "items": {
+        "type": "string"
+      }
+    },
+    "available": {
+      "type": "boolean",
+      "default": true,
+      "description": "Disponibilidad del equipo"
+    },
+    "features": {
+      "type": "array",
+      "description": "Caracter\u00edsticas del equipo",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "price"
+  ],
+  "rls": {
+    "read": true,
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

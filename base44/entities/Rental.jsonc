@@ -1,0 +1,169 @@
+{
+  "name": "Rental",
+  "type": "object",
+  "properties": {
+    "equipment_id": {
+      "type": "string",
+      "description": "ID del equipo rentado"
+    },
+    "equipment_name": {
+      "type": "string",
+      "description": "Nombre del equipo"
+    },
+    "client_name": {
+      "type": "string",
+      "description": "Nombre completo del cliente"
+    },
+    "client_phone": {
+      "type": "string",
+      "description": "Tel\u00e9fono del cliente"
+    },
+    "client_email": {
+      "type": "string",
+      "description": "Email del cliente"
+    },
+    "surgery_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de la cirug\u00eda"
+    },
+    "rental_days": {
+      "type": "number",
+      "description": "Cantidad de d\u00edas de renta",
+      "default": 7
+    },
+    "delivery_address": {
+      "type": "string",
+      "description": "Direcci\u00f3n de entrega"
+    },
+    "state": {
+      "type": "string",
+      "description": "Estado de entrega"
+    },
+    "is_outside_nl": {
+      "type": "boolean",
+      "description": "Si est\u00e1 fuera de Nuevo Le\u00f3n"
+    },
+    "referring_doctor": {
+      "type": "string",
+      "description": "Doctor que refiri\u00f3 al cliente"
+    },
+    "rental_start": {
+      "type": "string",
+      "format": "date",
+      "description": "Inicio de la renta"
+    },
+    "rental_end": {
+      "type": "string",
+      "format": "date",
+      "description": "Fin de la renta"
+    },
+    "feedback_email_sent": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si se envi\u00f3 el email de feedback"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pendiente",
+        "confirmado",
+        "enviado",
+        "en_uso",
+        "devuelto",
+        "cancelado"
+      ],
+      "default": "pendiente",
+      "description": "Estado de la renta"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "pendiente",
+        "pagado",
+        "reembolsado"
+      ],
+      "default": "pendiente"
+    },
+    "total_amount": {
+      "type": "number",
+      "description": "Monto total"
+    },
+    "equipment_care_agreement": {
+      "type": "boolean",
+      "description": "Aceptaci\u00f3n del compromiso de cuidado"
+    },
+    "instructions_sent": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si se enviaron las instrucciones"
+    },
+    "disinfection_instructions_sent": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si se enviaron instrucciones de desinfecci\u00f3n"
+    },
+    "tracking_number": {
+      "type": "string",
+      "description": "N\u00famero de gu\u00eda de rastreo"
+    },
+    "shipping_company": {
+      "type": "string",
+      "description": "Empresa de paqueter\u00eda"
+    },
+    "tracking_url": {
+      "type": "string",
+      "description": "URL de rastreo del paquete"
+    },
+    "shipping_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de env\u00edo"
+    },
+    "delivery_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de entrega"
+    },
+    "return_tracking_number": {
+      "type": "string",
+      "description": "N\u00famero de gu\u00eda para devoluci\u00f3n"
+    },
+    "return_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de devoluci\u00f3n"
+    },
+    "shipping_notes": {
+      "type": "string",
+      "description": "Notas sobre el env\u00edo"
+    },
+    "additional_notes": {
+      "type": "string",
+      "description": "Notas adicionales"
+    },
+    "custom_fields": {
+      "type": "object",
+      "description": "Campos personalizados adicionales",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "equipment_id",
+    "client_name",
+    "client_phone",
+    "surgery_date"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "create": true,
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

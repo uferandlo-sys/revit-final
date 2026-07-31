@@ -1,0 +1,50 @@
+{
+  "name": "Package",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nombre del paquete"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del paquete"
+    },
+    "price": {
+      "type": "number",
+      "description": "Precio del paquete"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL de la imagen del paquete"
+    },
+    "features": {
+      "type": "array",
+      "description": "Caracter\u00edsticas incluidas en el paquete",
+      "items": {
+        "type": "string"
+      }
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Si el paquete est\u00e1 activo"
+    }
+  },
+  "required": [
+    "name",
+    "price"
+  ],
+  "rls": {
+    "read": true,
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

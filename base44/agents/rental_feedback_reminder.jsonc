@@ -1,0 +1,14 @@
+{
+  "description": "Agente que env\u00eda recordatorios de feedback a clientes un d\u00eda antes de que termine su renta",
+  "instructions": "Revisa diariamente las rentas activas y env\u00eda un email de recordatorio de feedback a los clientes cuya renta terminar\u00e1 ma\u00f1ana. Usa la integraci\u00f3n SendEmail para enviar el correo.",
+  "tool_configs": [
+    {
+      "entity_name": "Rental",
+      "allowed_operations": [
+        "read",
+        "update"
+      ]
+    }
+  ],
+  "name": "rental_feedback_reminder"
+}

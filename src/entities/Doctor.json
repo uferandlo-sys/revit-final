@@ -1,0 +1,105 @@
+{
+  "name": "Doctor",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nombre completo del doctor"
+    },
+    "specialty": {
+      "type": "string",
+      "description": "Especialidad"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Tel\u00e9fono de contacto"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email"
+    },
+    "state": {
+      "type": "string",
+      "description": "Estado donde ejerce"
+    },
+    "city": {
+      "type": "string",
+      "description": "Ciudad"
+    },
+    "workplace_type": {
+      "type": "string",
+      "enum": [
+        "clinica",
+        "hospital",
+        "consultorio_privado",
+        "oftalmologia",
+        "otro"
+      ],
+      "description": "Tipo de lugar donde trabaja"
+    },
+    "clinic_name": {
+      "type": "string",
+      "description": "Nombre de la cl\u00ednica/hospital/consultorio"
+    },
+    "address": {
+      "type": "string",
+      "description": "Direcci\u00f3n del lugar de trabajo"
+    },
+    "is_partner": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si es socio del programa"
+    },
+    "membership_active": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si la membres\u00eda est\u00e1 activa"
+    },
+    "membership_start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Inicio de membres\u00eda"
+    },
+    "last_payment_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u00daltimo pago de membres\u00eda"
+    },
+    "commission_rate": {
+      "type": "number",
+      "description": "Porcentaje de comisi\u00f3n",
+      "default": 10
+    },
+    "total_referrals": {
+      "type": "number",
+      "default": 0,
+      "description": "Total de referencias"
+    },
+    "total_earnings": {
+      "type": "number",
+      "default": 0,
+      "description": "Ganancias totales"
+    },
+    "pending_payment": {
+      "type": "number",
+      "default": 0,
+      "description": "Pago pendiente"
+    },
+    "bank_account": {
+      "type": "string",
+      "description": "Cuenta bancaria para dep\u00f3sito"
+    },
+    "bank_name": {
+      "type": "string",
+      "description": "Nombre del banco"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notas adicionales"
+    }
+  },
+  "required": [
+    "name",
+    "phone"
+  ]
+}
